@@ -22,7 +22,7 @@ angular.module('assigntu', [
         controller: 'NewListCtrl'
       })
       .when('/lists/:id', {
-        templateUrl: 'views/lists/show.html',
+        templateUrl: 'views/show.html',
         controller: 'ListCtrl'
       })
       .otherwise({
