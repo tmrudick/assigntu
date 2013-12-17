@@ -1,0 +1,13 @@
+<h2>{{ list.name }}</h2>
+
+<p ng-if="!list.items">No Items</p>
+
+<ul>
+  <li ng-repeat="item in list.items">
+    <p>{{ item.text }} <button href="#" ng-click="remove($index)">remove</button></p>
+  </li>
+</ul>
+
+<form ng-submit="newItem()">
+  <input type="text" ng-model="item"> <button type="submit">Add</button>
+</form>

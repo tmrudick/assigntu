@@ -1,16 +1,19 @@
 'use strict';
 
+angular.module('firebase', [])
+  .factory('angularFire', function() {});
+
 angular.module('assigntu.lists', ['firebase'])
   .controller('ListsCtrl', function($scope, angularFire) {
-    var ref = new Firebase('https://assigntu.firebaseio.com/lists');
-    angularFire(ref.limit(15), $scope, 'lists');
+    //var ref = new Firebase('https://assigntu.firebaseio.com/lists');
+    //angularFire(ref.limit(15), $scope, 'lists');
   })
   .controller('ListCtrl', function($scope, $routeParams, angularFire) {
     var listId = $routeParams.id;
 
     $scope.list = {};
-    var ref = new Firebase('https://assigntu.firebaseio.com/lists/' + listId);
-    angularFire(ref, $scope, 'list');
+    //var ref = new Firebase('https://assigntu.firebaseio.com/lists/' + listId);
+    //angularFire(ref, $scope, 'list');
 
     $scope.newItem = function() {
       if (!$scope.list.items) {
