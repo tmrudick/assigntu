@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('assigntu', [
-  'assigntu.lists',
   'ngCookies',
   'ngResource',
   'ngSanitize',
