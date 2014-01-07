@@ -5,6 +5,7 @@ angular.module('assigntu', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'firebase',
 ])
   .config(function ($routeProvider) {
     $routeProvider
