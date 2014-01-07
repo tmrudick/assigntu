@@ -1,9 +1,6 @@
 'use strict';
 
 angular.module('assigntu')
-  .controller('NewListCtrl', function($scope) {
-    $scope.list = {};
-  })
   .controller('ListCtrl', function($scope, $routeParams, $firebase) {
     var listId = $routeParams.id;
 
