@@ -1,20 +1,8 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">assigntu</h3>
-</div>
-
 <div class="jumbotron">
-  <h2>Create a New List</h2>
-  <form ng-submit="createList(list.name)">
-    <input type="text" ng-model="list.name" placeholder="My Shiny New List" />
+  <form role="form" ng-submit="createList(list.name)">
+    <div class="form-group">
+      <input class="form-control input-lg" type="text" ng-model="list.name" placeholder="My Shiny New List" />
+    </div>
     <button type="submit" class="btn btn-primary">Create</button>
   </form>
-</div>
-
-<div class="footer">
-  <p>♥ from Brooklyn</p>
 </div>
