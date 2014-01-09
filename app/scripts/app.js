@@ -6,6 +6,7 @@ angular.module('assigntu', [
   'ngSanitize',
   'ngRoute',
   'firebase',
+  'angularMoment'
 ])
   .config(function ($routeProvider, $locationProvider) {
     //$locationProvider.html5Mode(true);

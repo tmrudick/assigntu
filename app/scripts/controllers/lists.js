@@ -14,8 +14,10 @@ angular.module('assigntu')
       }
 
       $scope.remote.items.push({
+        timestamp: new Date(),
         text: $scope.item,
-        completed: false
+        completed: false,
+        assigned: null
       });
 
       $scope.item = null;
