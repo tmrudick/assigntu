@@ -6,21 +6,23 @@ angular.module('assigntu')
 
     // Link the list on the scope to firebase
     $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + listId));
+    $scope.list.$bind($scope, 'remote');
 
     $scope.newItem = function() {
-      if (!$scope.list.items) {
-        $scope.list.items = [];
+      if (!$scope.remote.items) {
+        $scope.remote.items = [];
       }
 
-      $scope.list.items.push({
-        text: $scope.item
+      $scope.remote.items.push({
+        text: $scope.item,
+        completed: false
       });
 
       $scope.item = null;
     };
 
     $scope.remove = function(index) {
-      $scope.list.items.splice(index, 1);
+      $scope.remote.items.splice(index, 1);
       return false;
     };
   });

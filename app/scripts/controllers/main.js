@@ -7,7 +7,7 @@ angular.module('assigntu')
       var listId = identityFactory(5);
 
       // Link the list on the scope to firebase
-      $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + id));
+      $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + listId));
 
       // When we see a change event, redirect to the new list page
       $scope.list.$on('change', function() {

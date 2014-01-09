@@ -14,14 +14,6 @@ angular.module('assigntu', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/lists', {
-        templateUrl: 'views/lists/lists.html',
-        controller: 'ListsCtrl'
-      })
-      .when('/lists/new', {
-        templateUrl: 'views/lists/new.html',
-        controller: 'NewListCtrl'
-      })
       .when('/lists/:id', {
         templateUrl: 'views/show.html',
         controller: 'ListCtrl'
