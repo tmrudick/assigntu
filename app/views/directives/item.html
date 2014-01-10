@@ -1,4 +1,10 @@
 <div class="item">
-  <p><input type="checkbox" ng-model="item.completed" /> <span class="title">{{ item.text }}</span></p>
-  <p><span am-time-ago="item.timestamp"></span> <span class="assigned">{{ item.assigned }}</span></p>
+  <p>
+    <input type="checkbox" ng-model="item.completed" />
+    <span class="title">{{ item.text }}</span>
+  </p>
+  <p>
+    <span am-time-ago="item.timestamp"></span>
+    <span class="assigned">{{ item.assigned | assigned }}</span>
+  </p>
 </div>

@@ -27,4 +27,10 @@ angular.module('assigntu')
       $scope.remote.items.splice(index, 1);
       return false;
     };
+
+    $scope.$on('destroy', function() {
+      if ($scope.list.first) {
+        $scope.remote.first = false;
+      }
+    });
   });
