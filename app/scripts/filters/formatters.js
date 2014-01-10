@@ -1,5 +1,5 @@
 angular.module('assigntu')
-  .filter('assigned', function() {
+  .filter('unassigned', function() {
     return function(name) {
       if (!name) {
         return 'unassigned';
