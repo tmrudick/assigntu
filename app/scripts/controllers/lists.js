@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('assigntu')
-  .controller('ListCtrl', function($scope, $routeParams, $firebase) {
+  .controller('ListCtrl', function($scope, $routeParams, $firebase, MessageBus) {
     var listId = $routeParams.id;
+
+    $scope.flash = MessageBus.pop();
 
     // Link the list on the scope to firebase
     $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + listId));
@@ -27,10 +29,4 @@ angular.module('assigntu')
       $scope.remote.items.splice(index, 1);
       return false;
     };
-
-    $scope.$on('destroy', function() {
-      if ($scope.list.first) {
-        $scope.remote.first = false;
-      }
-    });
   });

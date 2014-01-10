@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('assigntu')
-  .controller('MainCtrl', ['$scope', '$location', '$firebase', 'idFactory', function ($scope, $location, $firebase, identityFactory) {
+  .controller('MainCtrl', ['$scope', '$location', '$firebase', 'idFactory', 'MessageBus', function ($scope, $location, $firebase, identityFactory, MessageBus) {
     $scope.createList = function(name) {
       // Create a new list identifier
       var listId = identityFactory(5);
@@ -11,10 +11,11 @@ angular.module('assigntu')
 
       // When we see a change event, redirect to the new list page
       $scope.list.$on('change', function() {
+        MessageBus.push("HELLO", 'warning');
         $location.path('/lists/' + listId);
       });
 
       // Set the value of the new list
-      $scope.list.$set({ id: listId, name: name, first: true })
+      $scope.list.$set({ id: listId, name: name })
     };
   }]);
