@@ -10,6 +10,10 @@ angular.module('assigntu')
     $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + listId));
     $scope.list.$bind($scope, 'remote');
 
+    $scope.editList = function() {
+      alert('edit list!');
+    };
+
     $scope.newItem = function() {
       if (!$scope.remote.items) {
         $scope.remote.items = [];
