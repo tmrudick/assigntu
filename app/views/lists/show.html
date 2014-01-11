@@ -1,9 +1,16 @@
-<h2>{{ list.name }}</h2>
+<h2>
+  {{ list.name }}
+  <button type="button" class="btn btn-default btn-xs" ng-click="editList()">
+    <span class="glyphicon glyphicon-edit"></span>
+  </button>
+</h2>
 
-<p ng-if="!list.items">No Items</p>
+<p ng-if="flash">{{ flash.message }}</p>
+
+<p ng-if="!remote.items">No Items</p>
 
 <ul>
-  <li ng-repeat="item in list.items">
+  <li ng-repeat="item in remote.items">
     <item item="item"></item>
   </li>
 </ul>
