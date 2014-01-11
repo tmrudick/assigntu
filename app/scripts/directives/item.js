@@ -5,6 +5,11 @@ angular.module('assigntu')
       scope: {
         'item': '='
       },
-      templateUrl: 'views/directives/item.html'
+      templateUrl: 'views/directives/item.html',
+      controller: ['$scope', function($scope) {
+        $scope.removeItem = function(item) {
+          $scope.$emit('remove-item', item);
+        };
+      }]
     }
   });

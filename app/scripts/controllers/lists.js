@@ -25,8 +25,9 @@ angular.module('assigntu')
       $scope.item = null;
     };
 
-    $scope.remove = function(index) {
+    // This will be raised by the item directive
+    $scope.$on('remove-item', function(event, item) {
+      var index = $scope.remote.items.indexOf(item);
       $scope.remote.items.splice(index, 1);
-      return false;
-    };
+    })
   });
