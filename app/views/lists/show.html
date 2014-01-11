@@ -5,7 +5,10 @@
   </button>
 </h2>
 
-<p ng-if="flash">{{ flash.message }}</p>
+<div ng-if="flash" class="alert alert-dismissable alert-{{ flash.style }}">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>{{ flash.style | exclamation }}</strong> {{ flash.message }}
+</div>
 
 <p ng-if="!remote.items">No Items</p>
 

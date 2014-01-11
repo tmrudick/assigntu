@@ -1,16 +1,21 @@
 angular.module('assigntu')
   .factory('MessageBus', function() {
-    var messages = [];
+    var messageQueue = [];
+
+    var messages = {
+      'first-run': "Welcome to your new list! Bookmark and share this URL!"
+    };
+
     return {
-      push: function(message, style) {
-        messages.push({
-          message: message,
+      push: function(idOrMessage, style) {
+        messageQueue.push({
+          message: messages[idOrMessage] || idOrMessage,
           style: style
         });
       },
       pop: function() {
-        if (messages.length) {
-          return messages.pop();
+        if (messageQueue.length) {
+          return messageQueue.pop();
         } else {
           return null;
         }
