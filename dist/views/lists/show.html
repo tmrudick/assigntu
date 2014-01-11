@@ -1,10 +1,20 @@
-<h2>{{ list.name }}</h2>
+<h2>
+  {{ list.name }}
+  <button type="button" class="btn btn-default btn-xs" ng-click="editList()">
+    <span class="glyphicon glyphicon-edit"></span>
+  </button>
+</h2>
 
-<p ng-if="!list.items">No Items</p>
+<div ng-if="flash" class="alert alert-dismissable alert-{{ flash.style }}">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>{{ flash.style | exclamation }}</strong> {{ flash.message }}
+</div>
+
+<p ng-if="!remote.items">No Items</p>
 
 <ul>
-  <li ng-repeat="item in list.items">
-    <p>{{ item.text }} <button href="#" ng-click="remove($index)">remove</button></p>
+  <li ng-repeat="item in remote.items">
+    <item item="item"></item>
   </li>
 </ul>
 

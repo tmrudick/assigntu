@@ -1,0 +1,13 @@
+<div class="item">
+  <p>
+    <input type="checkbox" ng-model="item.completed">
+    <span class="title">{{ item.text }}</span>
+    <button type="button" class="btn btn-default btn-xs" ng-click="removeItem(item)">
+      <span class="glyphicon glyphicon-trash"></span>
+    </button>
+  </p>
+  <p>
+    <span am-time-ago="item.timestamp"></span>
+    <span class="assigned">{{ item.assigned | unassigned }}</span>
+  </p>
+</div>

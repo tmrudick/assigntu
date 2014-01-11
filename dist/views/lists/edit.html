@@ -1,0 +1,13 @@
+<h2>
+  <input type="text" ng-model="list.name">
+ </h2>
+
+<p ng-if="!list.items">No items to edit</p>
+
+<ul>
+  <li ng-repeat="item in list.items">
+    <input type="text" ng-model="item.text">
+  </li>
+</ul>
+
+<button type="button" class="btn btn-success" ng-click="saveList()">Save</button>
