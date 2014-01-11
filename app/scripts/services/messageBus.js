@@ -3,7 +3,8 @@ angular.module('assigntu')
     var messageQueue = [];
 
     var messages = {
-      'first-run': "Welcome to your new list! Bookmark and share this URL!"
+      'first-run': 'Welcome to your new list! Bookmark and share this URL!',
+      'list-saved': 'Changes saved!'
     };
 
     return {

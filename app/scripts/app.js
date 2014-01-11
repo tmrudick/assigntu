@@ -19,6 +19,10 @@ angular.module('assigntu', [
         templateUrl: 'views/lists/show.html',
         controller: 'ListCtrl'
       })
+      .when('/lists/:id/edit', {
+        templateUrl: 'views/lists/edit.html',
+        controller: 'EditListCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
