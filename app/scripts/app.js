@@ -16,7 +16,7 @@ angular.module('assigntu', [
         controller: 'MainCtrl'
       })
       .when('/lists/:id', {
-        templateUrl: 'views/show.html',
+        templateUrl: 'views/lists/show.html',
         controller: 'ListCtrl'
       })
       .otherwise({
