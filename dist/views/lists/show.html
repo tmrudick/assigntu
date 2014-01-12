@@ -1,23 +1,41 @@
-<h2>
-  {{ list.name }}
-  <button type="button" class="btn btn-default btn-xs" ng-click="editList()">
-    <span class="glyphicon glyphicon-edit"></span>
-  </button>
-</h2>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">assigntu</a>
+    <p class="navbar-text"><a href="#/lists/{{ list.id }}" class="navbar-link">{{ list.name }}</a></p>
+  </div>
 
-<div ng-if="flash" class="alert alert-dismissable alert-{{ flash.style }}">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>{{ flash.style | exclamation }}</strong> {{ flash.message }}
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ng-click="editList()">Edit List</a></li>
+      <li><a ng-click="deleteList()">Delete List</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="container">
+  <div ng-if="flash" class="alert alert-dismissable alert-{{ flash.style }}">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>{{ flash.style | exclamation }}</strong> {{ flash.message }}
+  </div>
+
+  <p ng-if="!remote.items">Nothing here yet. Add a new item!</p>
+
+  <ul class="list-unstyled">
+    <li ng-repeat="item in remote.items">
+      <item item="item"></item>
+    </li>
+  </ul>
+
+  <form ng-submit="newItem()">
+    <input type="text" class="form-control" ng-model="item" placeholder="New Item">
+  </form>
 </div>
-
-<p ng-if="!remote.items">No Items</p>
-
-<ul>
-  <li ng-repeat="item in remote.items">
-    <item item="item"></item>
-  </li>
-</ul>
-
-<form ng-submit="newItem()">
-  <input type="text" ng-model="item"> <button type="submit">Add</button>
-</form>

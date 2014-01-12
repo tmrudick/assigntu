@@ -1,13 +1,53 @@
-<h2>
-  <input type="text" ng-model="list.name">
- </h2>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">assigntu</a>
+    <p class="navbar-text">Editing {{ list.name }}</p>
+  </div>
 
-<p ng-if="!list.items">No items to edit</p>
 
-<ul>
-  <li ng-repeat="item in list.items">
-    <input type="text" ng-model="item.text">
-  </li>
-</ul>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ng-click="editList()">Edit List</a></li>
+      <li><a ng-click="deleteList()">Delete List</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
 
-<button type="button" class="btn btn-success" ng-click="saveList()">Save</button>
+<div class="container">
+  <div class="form-group">
+    <label for="list-name">List Name</label>
+    <input type="text" class="form-control" id="list-name" ng-model="list.name" placeholder="List Name">
+  </div>
+
+  <h5>Bulk Edit Items</h5>
+
+  <p ng-if="!list.items">No items to edit</p>
+
+  <ul class="list-unstyled">
+    <li ng-repeat="item in list.items" class="row bottom10">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input type="checkbox" ng-model="item.completed">
+            </span>
+            <input type="text" class="form-control" ng-model="item.text">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </li>
+  </ul>
+
+  <button type="button" class="btn btn-success" ng-click="saveList()">Save</button>
+</div>
