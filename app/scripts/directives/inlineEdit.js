@@ -17,6 +17,8 @@ angular.module('assigntu')
       link: function(scope, element, attrs) {
         scope.edit = function() {
           scope.editing = true;
+
+          // Need timeout to wait for the digest loop to finish
           $timeout(function() {
             input.focus();
             input.select();
@@ -42,8 +44,6 @@ angular.module('assigntu')
         input.bind('blur', function(e) {
           scope.$apply(scope.done);
         });
-
-
       }
     }
   });

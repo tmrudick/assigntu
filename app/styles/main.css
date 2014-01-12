@@ -7,7 +7,6 @@
 
 .assigned .inline-editable {
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .jumbotron {
@@ -16,4 +15,8 @@
 
 .spa-view {
   margin-bottom: 25px;
+}
+
+.clickable {
+  cursor: pointer;
 }
