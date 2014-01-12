@@ -6,7 +6,7 @@ angular.module('assigntu')
       transclude: true,
       replace: true,
       scope: {
-        model: "=ngModel"
+        model: '=ngModel'
       },
       template: '<span class="inline-edit">' +
                   '<span ng-show="editing" class="inline-editing">' +
@@ -25,6 +25,10 @@ angular.module('assigntu')
 
         scope.done = function() {
           scope.editing = false;
+
+          if (scope.model === '') {
+            scope.model = 'unassigned';
+          }
         };
 
         var input = element.find('input').first();
