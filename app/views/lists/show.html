@@ -27,7 +27,7 @@
     <strong>{{ flash.style | exclamation }}</strong> {{ flash.message }}
   </div>
 
-  <p ng-if="!remote.items">Nothing here yet. Add a new item!</p>
+  <p ng-if="!remote.items"><strong>You haven't added any items yet!</strong> Add an item using the textbox below.</p>
 
   <ul class="list-unstyled">
     <li ng-repeat="item in remote.items">
