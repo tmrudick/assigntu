@@ -1,19 +1,21 @@
 <nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">assigntu</a>
-    <p class="navbar-text">Editing <a href="#/lists/{{ list.id }}" class="navbar-link">{{ list.name }}</a></p>
-  </div>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/lists/{{ list.id }}" class="navbar-link">{{ list.name }}</a>
+    </div>
 
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a ng-click="deleteList()">Delete List</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">New List</a></li>
+        <li><a class="clickable" ng-click="deleteList()">Delete List</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -29,7 +31,7 @@
 
   <ul class="list-unstyled">
     <li ng-repeat="item in list.items" class="row bottom10">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
           <div class="input-group">
             <span class="input-group-addon">
               <input type="checkbox" ng-model="item.completed">

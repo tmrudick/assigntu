@@ -1,0 +1,31 @@
+{
+  "name": "angularfire",
+  "main": [
+    "./angularfire.js"
+  ],
+  "ignore": [
+    "Gruntfile.js",
+    "package.js",
+    "tests",
+    "README.md",
+    ".travis.yml"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-mocks": "~1.2.0",
+    "observe-js": "https://github.com/jeffbcross/observe-js.git",
+    "firebase": "latest",
+    "firebase-simple-login": "latest"
+  },
+  "homepage": "https://github.com/firebase/angularFire",
+  "_release": "ef0cf84b66",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ef0cf84b662308f1d470dfe4becf3a0917aac33d"
+  },
+  "_source": "git://github.com/firebase/angularFire.git",
+  "_target": "master",
+  "_originalSource": "angularfire",
+  "_direct": true
+}
