@@ -19,8 +19,6 @@ angular.module('assigntu')
 
     $scope.editList = function() {
       $location.path('/lists/' + listId + '/edit');
-
-      return false;
     };
 
     $scope.newItem = function() {
@@ -38,11 +36,10 @@ angular.module('assigntu')
       $scope.item = null;
     };
 
-    // This will be raised by the item directive
-    $scope.$on('remove-item', function(event, item) {
-      var index = $scope.remote.items.indexOf(item);
-      $scope.remote.items.splice(index, 1);
-    })
+    $scope.deleteList = function() {
+      $scope.list.$remove();
+      $location.path('/');
+    };
   })
   .controller('EditListCtrl', function($scope, $routeParams, $location, $firebase, MessageBus) {
     var listId = $routeParams.id;
