@@ -23,7 +23,7 @@ angular.module('assigntu')
         timestamp: new Date(),
         text: $scope.item,
         completed: false,
-        assigned: null
+        assigned: 'unassigned'
       });
 
       $scope.item = null;

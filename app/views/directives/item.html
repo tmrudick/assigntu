@@ -8,6 +8,10 @@
   </p>
   <p>
     <span am-time-ago="item.timestamp"></span>
-    <span class="assigned">{{ item.assigned | unassigned }}</span>
+    <span class="assigned">
+      <span ng-model="item.assigned" tr-inline-edit>
+        <input type="text" ng-model="item.assigned" />
+      </span>
+    </span>
   </p>
 </div>
