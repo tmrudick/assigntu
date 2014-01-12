@@ -12,6 +12,8 @@ angular.module('assigntu')
 
     $scope.editList = function() {
       $location.path('/lists/' + listId + '/edit');
+
+      return false;
     };
 
     $scope.newItem = function() {
