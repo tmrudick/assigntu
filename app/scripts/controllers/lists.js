@@ -1,17 +1,10 @@
 'use strict';
 
 angular.module('assigntu')
-  .controller('ListCtrl', function($scope, $routeParams, $location, $firebase, MessageBus, $timeout) {
+  .controller('ListCtrl', function($scope, $routeParams, $location, $firebase, MessageBus) {
     var listId = $routeParams.id;
 
     $scope.flash = MessageBus.pop();
-
-    // Hide the flash message after 15 seconds
-    if ($scope.flash) {
-      $timeout(function() {
-        $scope.flash = null;
-      }, 15000);
-    }
 
     // Link the list on the scope to firebase
     $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + listId));
