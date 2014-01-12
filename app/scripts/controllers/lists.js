@@ -19,7 +19,7 @@ angular.module('assigntu')
         $scope.flash = {
           message: 'Items must have some text',
           style: 'warning'
-        }
+        };
 
         return;
       }
@@ -56,7 +56,7 @@ angular.module('assigntu')
 
     $scope.saveList = function() {
       if (!$scope.list.name || $scope.list.name === '') {
-        $scope.list.name = "New List";
+        $scope.list.name = 'New List';
       }
 
       $scope.list.$save();

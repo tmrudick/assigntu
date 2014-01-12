@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('assigntu')
   .filter('exclamation', function() {
     return function(style) {

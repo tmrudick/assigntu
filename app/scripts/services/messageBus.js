@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('assigntu')
   .factory('MessageBus', function() {
     var messageQueue = [];

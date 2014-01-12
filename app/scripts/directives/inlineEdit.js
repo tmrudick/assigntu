@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('assigntu')
   .directive('trInlineEdit', function($timeout) {
     return {
@@ -14,7 +16,7 @@ angular.module('assigntu')
                   '</span>' +
                   '<span class="inline-editable" ng-hide="editing" ng-click="edit()">{{ model }}</span>' +
                 '</span>',
-      link: function(scope, element, attrs) {
+      link: function(scope, element) {
         scope.edit = function() {
           scope.editing = true;
 
@@ -41,9 +43,9 @@ angular.module('assigntu')
           }
         });
 
-        input.bind('blur', function(e) {
+        input.bind('blur', function() {
           scope.$apply(scope.done);
         });
       }
-    }
+    };
   });

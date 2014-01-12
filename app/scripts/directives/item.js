@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('assigntu')
   .directive('item', function() {
     return {
@@ -11,5 +13,5 @@ angular.module('assigntu')
           $scope.$emit('remove-item', item);
         };
       }]
-    }
+    };
   });

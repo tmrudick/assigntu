@@ -7,8 +7,7 @@ angular.module('assigntu', [
   'ngRoute',
   'firebase'
 ])
-  .config(function ($routeProvider, $locationProvider) {
-    //$locationProvider.html5Mode(true);
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
