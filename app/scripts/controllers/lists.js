@@ -40,6 +40,12 @@ angular.module('assigntu')
 
     $scope.list = $firebase(new Firebase('https://assigntu.firebaseio.com/lists/' + listId));
 
+    $scope.removeItem = function(item) {
+      var index = $scope.list.items.indexOf(item);
+      $scope.list.items.splice(index, 1);
+      $scope.list.$save();
+    };
+
     $scope.saveList = function() {
       $scope.list.$save();
       MessageBus.push('list-saved', 'success');
