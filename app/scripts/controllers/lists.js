@@ -15,6 +15,15 @@ angular.module('assigntu')
     };
 
     $scope.newItem = function() {
+      if (!$scope.item || $scope.item === '') {
+        $scope.flash = {
+          message: 'Items must have some text',
+          style: 'warning'
+        }
+
+        return;
+      }
+
       if (!$scope.remote.items) {
         $scope.remote.items = [];
       }

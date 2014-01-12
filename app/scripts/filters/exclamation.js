@@ -4,6 +4,8 @@ angular.module('assigntu')
       switch (style) {
         case 'danger':
           return 'Uh-oh!';
+        case 'warning':
+          return 'Whoops!';
         default:
           return 'Hurray!';
       }
