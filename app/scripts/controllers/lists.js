@@ -46,6 +46,10 @@ angular.module('assigntu')
     };
 
     $scope.saveList = function() {
+      if (!$scope.list.name || $scope.list.name === '') {
+        $scope.list.name = "New List";
+      }
+
       $scope.list.$save();
       MessageBus.push('list-saved', 'success');
       $location.path('/lists/' + listId);
