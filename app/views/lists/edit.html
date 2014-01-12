@@ -8,14 +8,13 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#">assigntu</a>
-    <p class="navbar-text">Editing {{ list.name }}</p>
+    <p class="navbar-text">Editing <a href="#/lists/{{ list.id }}" class="navbar-link">{{ list.name }}</a></p>
   </div>
 
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      <li><a ng-click="editList()">Edit List</a></li>
       <li><a ng-click="deleteList()">Delete List</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
@@ -27,9 +26,9 @@
     <input type="text" class="form-control" id="list-name" ng-model="list.name" placeholder="List Name">
   </div>
 
-  <h5>Bulk Edit Items</h5>
+  <h5>Items</h5>
 
-  <p ng-if="!list.items">No items to edit</p>
+  <p ng-if="!list.items">You haven't added anything to this list yet.</p>
 
   <ul class="list-unstyled">
     <li ng-repeat="item in list.items" class="row bottom10">

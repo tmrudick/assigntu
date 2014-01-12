@@ -1,17 +1,10 @@
-<div class="item">
-  <p>
-    <input type="checkbox" ng-model="item.completed" />
-    <span class="title" ng-click="item.completed = !item.completed">{{ item.text }}</span>
-    <button type="button" class="btn btn-default btn-xs" ng-click="removeItem(item)">
-      <span class="glyphicon glyphicon-trash"></span>
-    </button>
+<div class="item row">
+  <p class="lead col-xs-7" ng-click="item.completed = !item.completed">
+    <input type="checkbox" ng-model="item.completed"> {{ item.text }}</input>
   </p>
-  <p>
-    <span am-time-ago="item.timestamp"></span>
-    <span class="assigned">
-      <span ng-model="item.assigned" tr-inline-edit>
-        <input type="text" ng-model="item.assigned" class="form-control" />
-      </span>
+  <p class="lead text-muted col-xs-5 text-right">
+    <span class="assigned" ng-model="item.assigned" tr-inline-edit>
+      <input type="text" ng-model="item.assigned" class="form-control" />
     </span>
   </p>
 </div>

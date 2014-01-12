@@ -5,4 +5,7 @@
 .bottom17 { margin-bottom:17px; }
 .bottom30 { margin-bottom:30px; }
 
-
+.assigned .inline-editable {
+  text-decoration: underline;
+  cursor: pointer;
+}
