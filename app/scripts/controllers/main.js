@@ -18,6 +18,7 @@ angular.module('assigntu')
         // When we see a change event, redirect to the new list page
         $scope.list.$on('change', function() {
           MessageBus.push('first-run', 'success');
+          $scope.list.$off('change');
           $location.path('/lists/' + listId);
         });
 
