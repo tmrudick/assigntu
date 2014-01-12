@@ -31,7 +31,7 @@ angular.module('assigntu')
 
     $scope.deleteList = function() {
       $scope.list.$remove();
-      $location.path('/');
+      $location.path('/').replace();
     };
   })
   .controller('EditListCtrl', function($scope, $routeParams, $location, $firebase, MessageBus) {
@@ -49,5 +49,10 @@ angular.module('assigntu')
       $scope.list.$save();
       MessageBus.push('list-saved', 'success');
       $location.path('/lists/' + listId);
+    };
+
+    $scope.deleteList = function() {
+      $scope.list.$remove();
+      $location.path('/').replace();
     };
   });
