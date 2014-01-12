@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('assigntu')
-  .directive('trInlineEdit', function($timeout) {
+  .directive('trInlineEdit', ['$timeout', function($timeout) {
     return {
       restrict: 'A',
       priority: 2,
@@ -48,4 +48,4 @@ angular.module('assigntu')
         });
       }
     };
-  });
+  }]);
