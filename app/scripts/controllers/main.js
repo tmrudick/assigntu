@@ -3,7 +3,7 @@
 angular.module('assigntu')
   .controller('MainCtrl', ['$scope', '$location', '$firebase', 'idFactory', 'MessageBus',
     function ($scope, $location, $firebase, identityFactory, MessageBus) {
-      $scope.createList = function() {
+      $scope.createList = function(name) {
         // Create a new list identifier
         var listId = identityFactory(5);
 
@@ -17,6 +17,6 @@ angular.module('assigntu')
         });
 
         // Set the value of the new list
-        $scope.list.$set({ id: listId, name: 'New List' });
+        $scope.list.$set({ id: listId, name: name });
       };
     }]);
