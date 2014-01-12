@@ -1,5 +1,4 @@
 <nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -8,17 +7,14 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#">assigntu</a>
-    <p class="navbar-text">Editing {{ list.name }}</p>
+    <p class="navbar-text">Editing <a href="#/lists/{{ list.id }}" class="navbar-link">{{ list.name }}</a></p>
   </div>
 
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      <li><a ng-click="editList()">Edit List</a></li>
       <li><a ng-click="deleteList()">Delete List</a></li>
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>
 
 <div class="container">
@@ -27,9 +23,9 @@
     <input type="text" class="form-control" id="list-name" ng-model="list.name" placeholder="List Name">
   </div>
 
-  <h5>Bulk Edit Items</h5>
+  <h5>Items</h5>
 
-  <p ng-if="!list.items">No items to edit</p>
+  <p ng-if="!list.items">You haven't added anything to this list yet.</p>
 
   <ul class="list-unstyled">
     <li ng-repeat="item in list.items" class="row bottom10">
@@ -40,12 +36,12 @@
             </span>
             <input type="text" class="form-control" ng-model="item.text">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
+              <button class="btn btn-default" type="button" ng-click="removeItem(item)">
                 <span class="glyphicon glyphicon-trash"></span>
               </button>
             </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+          </div>
+        </div>
     </li>
   </ul>
 
