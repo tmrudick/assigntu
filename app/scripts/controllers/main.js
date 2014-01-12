@@ -4,6 +4,11 @@ angular.module('assigntu')
   .controller('MainCtrl', ['$scope', '$location', '$firebase', 'idFactory', 'MessageBus',
     function ($scope, $location, $firebase, identityFactory, MessageBus) {
       $scope.createList = function(name) {
+        // Set default in case name is empty
+        if (!name || name === '') {
+          name = 'New List';
+        }
+
         // Create a new list identifier
         var listId = identityFactory(5);
 

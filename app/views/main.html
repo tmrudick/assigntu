@@ -21,7 +21,9 @@
   <div class="container">
     <h1>Easy Group Lists</h1>
     <p>Tired of coordinating who's bringing what? Make one list so everyone can sign up.</p>
-    <p><input type="text" placeholder="What are you doing?" class="form-control" ng-model="list.name"><p>
-    <p><a class="btn btn-primary btn-lg" role="button" ng-click="createList(list.name)">Get started &raquo;</a></p>
+    <form ng-submit="createList(list.name)">
+      <p><input type="text" placeholder="What are you doing?" class="form-control" ng-model="list.name"><p>
+      <p><a class="btn btn-primary btn-lg" role="button" ng-click="createList(list.name)">Get started &raquo;</a></p>
+    </form>
   </div>
 </div>
